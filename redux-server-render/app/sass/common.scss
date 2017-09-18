@@ -1,0 +1,131 @@
+$blue: #1875e7;
+$h_color: #f82566;
+$back: #fafafa;
+$left: left;
+
+@mixin left($value: 10px) {
+　　float: left;
+　　margin-left: $value;
+}
+@mixin rounded($vert, $horz, $radius: 10px) {
+　　　　border-#{$vert}-#{$horz}-radius: $radius;
+　　　　-moz-border-radius-#{$vert}#{$horz}: $radius;
+　　　　-webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+#appContainer {
+	width: 100%;
+	overflow: hidden
+}
+
+*{padding: 0;margin: 0;text-decoration: none}
+
+div {
+    color: $blue;
+    @include left(20px);
+    @include rounded(top, left);
+}
+
+.m-book-list {
+	margin: 20px 15px;
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: block;
+}
+
+.m-book-list {
+	img {
+		width: 100px;
+		display: block;
+	}
+	.f-detail{
+		position: absolute;
+		top: 0;
+		left: 120px;
+	}
+}
+
+.m-introduce-block {
+	margin: 20px;
+	line-height: 2em;
+}
+
+.g-body{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $back;
+}
+
+.f-fl {
+	float: $left;
+}
+
+h1{text-align: center}
+
+div {
+    h1 {
+　　color:red;
+	}
+}
+
+.m-header{
+    position: relative;
+    line-height: 44px;
+    overflow: hidden;
+    background: $h_color;
+    color: #fff;
+}
+
+.m-header{
+	.iconfont{
+		text-align: center;
+		width: 44px;
+	}
+
+	h1 {
+	  position: absolute;
+	  left: 10%;
+	  top: 0;
+	  width: 80%;
+	  font-size: 18px;
+	}
+}
+
+.m-nav {
+  text-align: center;
+  line-height: 44px;
+  background: $h_color;
+  box-shadow: 0 7px 5px -1px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 7px 5px -1px rgba(0,0,0,.1);
+}
+
+.m-nav {
+	a {
+		color: #fff
+	}
+	a.active {
+		background: $blue;
+	}	
+} 
+
+.flex-box {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ }	
+
+.flex {
+  -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;         /* OLD - Firefox 19- */
+  width: 20%;               /* For old syntax, otherwise collapses. */
+  -webkit-flex: 1;          /* Chrome */
+  -ms-flex: 1;              /* IE 10 */
+  flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}	
